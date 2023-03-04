@@ -1,0 +1,128 @@
+.modalContainer{
+    position:fixed;
+    top : 0;
+    width : 100vw;
+    height : 100vh;
+    z-index: 999999999900000000000000;
+   
+}
+
+.overlay{
+    position: absolute;
+    width : 100%;
+    top : 0;
+    left: 0;
+    height : 100%;
+    background:transparent;
+    animation: fadeIn .4s ease-in-out forwards;
+    z-index: 1;
+}
+
+.modal{
+    width : 1000px;
+    height : 600px;
+    margin: 80px auto;
+    background : darkgray;
+    position: relative;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-10%);
+    animation: swipeUp .4s ease-in-out forwards;
+    box-shadow: 3px 3px 4px black;
+    border-radius: 5px;
+    overflow:hidden
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: left; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.gridContainer{
+    display: grid;
+    grid-template-areas:
+      'header header header header header'
+      'left main main main right'
+      'footer footer footer footer footer';
+    gap: 5px;
+    background-color: #707070;
+    padding: 0px;
+    width : 98%;
+    margin : 10px auto;
+}
+
+
+.gridContainer > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 200px;
+    height : 130px;
+    border-radius: 4px;
+  }
+
+  .gridContainer > div > h2{
+    text-align: center;
+    color : rgb(53, 53, 53)
+  }
+
+
+
+  .modal button{
+        width : 300px;
+        margin : 10px 10px;
+        padding : 20px 0px;
+        font-weight : bolder;
+        font-size : 21px;
+        border : none;
+        cursor : pointer;
+        transition: all .3s ease-in-out;
+  }
+
+
+  .modal button:hover{
+    box-shadow: 3px 3px 3px black;
+    transform:translateY(-3%) scale(1.1)
+  }
+
+
+  .modal input {
+    margin: 20px 0px;
+  }
+
+
+  .modal div{
+    font-weight: bolder;
+  }
+
+  .apply{
+    background : dodgerblue;
+    color: white
+  }
+
+  .cancel{
+    background : tomato;
+    color : white
+  }
+
+
+@keyframes fadeIn{
+    from {
+        background : transparent
+    }
+    to{
+        background-color:  rgba(0, 0, 0, 0.678);
+    }
+}
+
+@keyframes swipeUp{
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

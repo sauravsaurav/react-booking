@@ -1,0 +1,210 @@
+
+/* Seat Css Goes here */
+.eachSeat{
+    width : 50px;
+    height : 50px;
+    position: relative;
+    transition: all .5s ease-out;
+    display: inline-block;
+    margin:5px;
+    opacity: 0;
+    transform: scaleY(-10%);
+    animation : slide .8s ease-in-out forwards;
+}
+
+.sitting{
+    width: 79%;
+    height: 60%;
+    background : #db5138 ;
+    border-radius : 10px;
+    position: absolute;
+    top: 15%;
+    left : 10%;
+    z-index: 99;
+    text-align: center;
+    font-weight: bolder;
+    color : white;
+    font-size:10px !important;
+    line-height: 2.8;
+}
+
+.backSeat{
+    width : 60%;
+    height : 60%;
+    background :   rgb(244, 28, 28);
+    border-radius: 5px;
+    position: absolute;
+    left : 19%;
+}
+
+.leftHandle{
+    position: absolute;
+    width : 16%;
+    height : 55%;
+    background : black;
+    border-radius: 10px;
+    left : 6%;
+    top : 20%;
+    z-index: 100;
+}
+
+.rightHandle{
+    position: absolute;
+    width : 15%;
+    height : 55%;
+    background : black;
+    border-radius: 10px;
+    right : 6%;
+    top : 20%;
+    z-index: 100;
+}
+
+.bottomHandle{
+    z-index:10;
+    position: absolute;
+    width : 65%;
+    height:50%;
+    background: brown;
+    top: 49%;
+    left:18%;
+    border-radius: 5px;
+}
+
+.notAvailable .backSeat{
+    background: rgb(116, 116, 116);
+}
+
+.notAvailable .leftHandle , .notAvailable .rightHandle{
+    background: rgb(78, 78, 78);
+}
+
+.notAvailable .sitting{
+    background: rgb(77, 72, 72);
+}
+
+.notAvailable .bottomHandle{
+    background: black
+}
+.booked .backSeat{
+    background: rgb(73, 172, 73);
+}
+
+.booked .leftHandle , .booked .rightHandle{
+    background: green;
+}
+
+.booked .sitting{
+    background: limegreen;
+}
+
+.booked .bottomHandle{
+    background: rgb(2, 75, 2)
+}
+
+
+.available{
+    transition: all .3s ease-in-out;
+}
+
+.available:hover{
+    transition: all .3s ease-in-out;
+    transform: scale(1.3) !important;
+    cursor: pointer;
+}
+
+.notAvailable:hover{
+    cursor: not-allowed;
+}
+
+@keyframes slide{
+    0%{
+        opacity: 0.3;
+        transform: translateY(10%)  rotate(10deg);    
+        box-shadow:10px 20px 30px black
+    }
+    10%{
+        opacity: 0.5;
+        transform: translateY(10%)  rotate(10deg);    
+        box-shadow:10px 20px 30px black
+    }
+    50%{
+            opacity: 0.7;
+            transform: translateY(10%)  rotate(-10deg);    
+            box-shadow: 0px 13px 3px black;      /* outer right cyan */
+    }
+    70%{
+            opacity: 0.9;
+            transform: translateY(10%)  rotate(10deg);    
+            box-shadow: 0px 13px 3px black;      /* outer right cyan */
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+        box-shadow: 0px 13px 13px black;
+        border-radius: 50%;
+    }
+}
+
+
+
+
+.isAvailable{
+    transition: all .4s ease-in-out !important ;
+    transform: rotate(0deg) ;
+    cursor: pointer;
+}
+
+
+.isAvailable:hover{
+    transform: scale(1.5) !important;
+}
+
+.isBooked{
+    background : lightgray
+}
+
+
+.sitting .woosh{
+    opacity: 0;
+    width : 100%;
+    height : 100%;
+    position: absolute;
+    top: 28%;
+    animation : wooosh .5s ease-in-out forwards;
+}
+
+@keyframes wooosh {
+    0%{
+        opacity: 0.6;
+        transform: scale(1.5) rotate(10deg);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(0.5) rotate(-10deg);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+.sitting img{
+    position: absolute;
+    left: -10%;
+    top: -52%;
+    animation : floatt .8s ease-in-out infinite
+}
+
+@keyframes floatt{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+

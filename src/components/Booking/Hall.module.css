@@ -1,0 +1,157 @@
+/* .hall{
+    width : 1200px;
+    height : 600px;
+    border : 1px solid gray;
+    margin : 20px auto;
+} */
+
+.item1 { grid-area: header; }
+.item2 { grid-area: left; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.gridContainer{
+    display: grid;
+    grid-template-areas:
+      'header header header header header'
+      'left main main main right'
+      'footer footer footer footer footer';
+    gap: 10px;
+    background-color: #f35d21;
+    padding: 10px;
+    width : 1250px;
+    margin : 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.gridContainer > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bolder;
+    height : 170px;
+  }
+
+  .gridContainer > div > h2{
+    text-align: center;
+  }
+
+
+
+  .absoluteButtons{
+    position: absolute;
+    left : 0;
+    padding : 10px 5px;
+    font-weight: bolder;
+    border : none;
+    width : 150px;
+    transition: all .4s ease-in-out;
+    animation: slide .4s ease-in-out forwards;
+    transform: translateX(-100%);
+
+  }
+
+  .manual{
+    top : 20%;
+    border : none;
+    cursor : pointer;
+    background : dodgerblue;
+    color : white;
+  }
+
+  .all{
+    top : 26%;
+    border : none;
+    cursor : pointer;
+    background : blue;
+    color : white;
+  }
+
+  .booked{
+    top : 44%;
+    border : none;
+    background : limegreen;
+    color : white;
+    padding : 10px 5px;
+    width : 140px;
+  }
+
+
+  .available{
+    top : 38%;
+    border : none;
+    background : tomato;
+    color : white;
+    padding : 10px 5px;
+    width : 140px;
+  }
+
+  .clear{
+    top : 32%;
+    border : none;
+    cursor : pointer;
+    background : red;
+    color : white;
+  }
+
+.absoluteButtons:hover{
+  transform: scale(1.2) !important;
+}
+
+@keyframes slide{
+  0% {
+    transform: translateX(-100%) scale(1.2);
+  }
+  50%{
+    transform: translateX(0)  scale(1.2);
+  }
+  100%{
+    transform: translateX(0) scale(1);
+  }
+}
+
+
+.leftCurtain ,.rightCurtain{
+  position: absolute;
+  top : -2%;
+  width : 100%;
+  height : 110%;
+  z-index:9999999999999999999
+}
+
+.leftCurtain{
+  left : -3%;
+  animation : swipeLeft 1s ease-in-out forwards;
+}
+
+.rightCurtain{
+  right : -3%;
+  animation : swipeRight 1s ease-in-out forwards;
+}
+
+@keyframes swipeLeft{
+  0%{
+    left:-3%
+  }
+  100%{
+    left : -100%;
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes swipeRight{
+  0%{
+    right:-3%
+  }
+  100%{
+    right : -100%;
+    opacity: 0;
+    display: none;
+  }
+}
+
+
